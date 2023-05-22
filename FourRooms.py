@@ -36,17 +36,17 @@ class FourRooms:
             [
                 # 0   1   2   3   4   5   6   7   8   9  10  11  12
                 [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # 0
-                [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 1
+                [-1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, -1],  # 1
                 [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 2
-                [-1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, -1],  # 3
+                [-1,  0,  0,  0, -1,  0,  0,  0,  0,  0,  0,  0, -1],  # 3
                 [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 4
-                [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 5
+                [-1,  0,  0,  0,  0,  0, -1,  0, -1,  0,  0,  0, -1],  # 5
                 [-1, -1,  0, -1, -1, -1, -1,  0,  0,  0,  0,  0, -1],  # 6
-                [-1,  0,  0,  0,  0,  0, -1, -1, -1,  0, -1, -1, -1],  # 7
-                [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 8
-                [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 9
+                [-1,  0,  0,  0,  0,  0, -1, -1, -1, -1, -1,  0, -1],  # 7
+                [-1,  0, -1,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 8
+                [-1,  0,  0, -1,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 9
                 [-1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, -1],  # 10
-                [-1,  0,  0,  0,  0,  0, -1,  0,  0,  0,  0,  0, -1],  # 11
+                [-1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, -1],  # 11
                 [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]   # 12
             ], dtype=numpy.float32
         )
@@ -58,17 +58,17 @@ class FourRooms:
         self.__package_locations = []
 
         for i in range(self.__start_num_packages):
-            randX, randY = random.randint(1, 11), random.randint(1, 11)
-            while self.__environment[randY][randX] != 0:
-                randX, randY = random.randint(1, 11), random.randint(1, 11)
+            randX, randY = random.randint(1, 11), 1
+            #while self.__environment[randY][randX] != 0:
+            #    randX, randY = random.randint(1, 11), random.randint(1, 11)
 
             self.__environment[randY][randX] = (i + 1)
             self.__package_locations.append((randX, randY))
 
         # Generate Agent Start Pos
-        randX, randY = random.randint(1, 11), random.randint(1, 11)
-        while self.__environment[randY][randX] != 0:
-            randX, randY = random.randint(1, 11), random.randint(1, 11)
+        randX, randY = random.randint(1, 11), 11
+        #while self.__environment[randY][randX] != 0:
+        #    randX, randY = random.randint(1, 11), random.randint(1, 11)
 
         self.__start_pos = (randX, randY)
         self.__current_pos = (randX, randY)
