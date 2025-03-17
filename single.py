@@ -7,7 +7,7 @@ import time
 def main():
     # Create FourRooms Object
     stoch : bool = False
-    if len(sys.argv) == 2:
+    if len(sys.argv) >= 2:
         if (sys.argv[1] == "-stochastic"):
             stoch = True
     fourRoomsObj = FourRooms('simple', stoch)

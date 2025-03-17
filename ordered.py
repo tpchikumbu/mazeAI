@@ -7,7 +7,7 @@ import time
 def main():
     # Create FourRooms Object
     stoch : bool = False
-    if len(sys.argv) == 2:
+    if len(sys.argv) >= 2:
         if (sys.argv[1] == "-stochastic"):
             stoch = True
     fourRoomsObj = FourRooms('rgb', stoch)
@@ -20,7 +20,7 @@ def main():
     test(fourRoomsObj, q_matrix)
     
     # Show trained path
-    fourRoomsObj.showPath(-1, "rgb.jpg")
+    fourRoomsObj.showPath(-1)
 
 #Determine the best action using greedy selection
 def best_move(matrix, pos, pack):

@@ -58,9 +58,9 @@ class FourRooms:
         self.__package_locations = []
 
         for i in range(self.__start_num_packages):
-            randX, randY = random.randint(1, 11), 1
-            #while self.__environment[randY][randX] != 0:
-            #    randX, randY = random.randint(1, 11), random.randint(1, 11)
+            randX, randY = random.randint(1, 11), random.randint(1, 11)
+            while self.__environment[randY][randX] != 0:
+               randX, randY = random.randint(1, 11), random.randint(1, 11)
 
             self.__environment[randY][randX] = (i + 1)
             self.__package_locations.append((randX, randY))
@@ -137,9 +137,9 @@ class FourRooms:
         pixels = self.__environment.copy()
 
         # Path
-#        for loc in self.__pathRecords[index]:
-#            pixels[loc[1]][loc[0]] = 4
-#
+        for loc in self.__pathRecords[index]:
+           pixels[loc[1]][loc[0]] = 4
+
         # Start Pos
         pixels[self.__start_pos[1]][self.__start_pos[0]] = 5
 
