@@ -1,7 +1,7 @@
 import numpy
 import random
 
-from matplotlib import pyplot, colors
+from matplotlib import pyplot, colors, animation
 
 
 class FourRooms:
@@ -137,9 +137,9 @@ class FourRooms:
         pixels = self.__environment.copy()
 
         # Path
-        for loc in self.__pathRecords[index]:
-            pixels[loc[1]][loc[0]] = 4
-
+#        for loc in self.__pathRecords[index]:
+#            pixels[loc[1]][loc[0]] = 4
+#
         # Start Pos
         pixels[self.__start_pos[1]][self.__start_pos[0]] = 5
 
