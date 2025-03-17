@@ -9,17 +9,23 @@ Each scenario can be run directly with `python <file name>` or within a virtual
 ## Scenario 1 - Single Target
 
 Evaluates the best path to a single target location from the agent starting position.
+
 Direct: `python single.py`
+
 VENV : `make scenario1`
 
 ## Scenario 2 - Multi Target
 
 Three target locations are placed. The agent must find all three locations before terminating.
+
 Direct: `python multi.py`
+
 VENV : `make scenario2`
 
 ## Scenario 3 - Ordered Targets
 
 Requires the agent to pass through the three target locations in a specific order (red -> green -> blue).
+
 Direct: `python ordered.py`
+
 VENV : `make scenario3`
